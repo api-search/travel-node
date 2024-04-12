@@ -1,1 +1,2 @@
-# travel
+## Payments
+A Payments APIs index.
