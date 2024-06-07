@@ -1,0 +1,572 @@
+openapi: 3.0.1
+info:
+  title: Loyalty Earn API
+  description: Loyalty earn API V1
+  version: v1
+
+tags:
+  - name: Loyalty
+    description: Template Loyalty Earn API
+
+servers:
+  - url: https://test.analytics.ean.com/template/v1
+
+paths:
+  /loyalty/earn/transactions:
+    get:
+      operationId: loyaltyTransactions
+      tags:
+        - Loyalty
+      description: |
+        Get loyalty earn transactions for the requested transaction date range. <br>
+        The response is a list of transactions sorted from the newest transaction date to the oldest.
+      parameters:
+        - $ref: '#/components/parameters/ItineraryId'
+        - $ref: '#/components/parameters/MembershipId'
+        - $ref: '#/components/parameters/TransactionType'
+        - $ref: '#/components/parameters/TransactionDateStart'
+        - $ref: '#/components/parameters/TransactionDateEnd'
+        - $ref: '#/components/parameters/From'
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        "200":
+          description: OK
+          headers:
+            link:
+              description: |
+                Contains a single link to get the immediate next set of results. 
+                This header will be missing when there are no further results
+              schema:
+                type: string
+                example: /loyalty/earn/transactions?from=1000
+            url:
+              description: Url of the call made
+              schema:
+                type: string
+                example: /loyalty/earn/transactions?from=1000&transaction_type=AWARD
+
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoyaltyResponse'
+              examples:
+                SingleAwardTransaction:
+                  value:
+                    data:
+                      - transaction_id: d78fd53a7ed573b9c9731c569fae096f7a508e7ae586aaa29be96b11e94abb36
+                        transaction_type: AWARD
+                        transaction_date: 2023-10-21
+                        transaction_datetime: 2023-10-21T00:00:00.000
+                        award_date: 2023-10-21
+                        itinerary:
+                          id: "72564500000000"
+                          package_indicator: Standalone
+                          booking_item:
+                            id: "1329922272"
+                            product_line: Lodging
+                            begin_use_date: 2023-10-17
+                            end_use_date: 2023-10-20
+                            booking_date: 2023-10-01
+                        loyalty:
+                          program_name: Alaska
+                          member:
+                            id: "456178230"
+                            tier: Standard
+                            last_name: Doe
+                          points:
+                            point_definition: 2X_09032020_Alaska
+                            pending:
+                              total: -100.11
+                              base: -90.01
+                              bonus: -10.10
+                            awarded:
+                              total: 100.11
+                              base: 90.01
+                              bonus: 10.10
+                        pricing:
+                          -
+                            gross_booking_value: 231.19
+                            base_price: 190.12
+                            currency: USD
+
+                MultipleItineraryTransactions:
+                  value:
+                    data:
+                      - transaction_id: 92215381a66856eb1c3a859f3be9c58d0ba5584e20e3958f758ad3d03fbb84cc
+                        transaction_type: PURCHASE
+                        transaction_date: 2023-10-01
+                        transaction_datetime: 2023-10-01T00:00:00.000
+                        award_date: 2023-10-21
+                        itinerary:
+                          id: "72564500000000"
+                          package_indicator: Standalone
+                          booking_item:
+                            id: "1329922272"
+                            product_line: Lodging
+                            begin_use_date: 2023-10-17
+                            end_use_date: 2023-10-20
+                            booking_date: 2023-10-01
+                        loyalty:
+                          program_name: Alaska
+                          member:
+                            id: "456178230"
+                            tier: Standard
+                            last_name: Doe
+                          points:
+                            point_definition: 2X_09032020_Alaska
+                            pending:
+                              total: 100.11
+                              base: 90.01
+                              bonus: 10.10
+                            awarded:
+                              total: 0.0
+                              base: 0.0
+                              bonus: 0.0
+                        pricing:
+                          - gross_booking_value: 231.19
+                            base_price: 190.12
+                            currency: USD
+                      - transaction_id: 7c9b6df6cd6f7889df41f8f9b0dc03a94ed2b91770c63b0002b0c0943d5d6348
+                        transaction_type: MODIFICATION
+                        transaction_date: 2023-10-11
+                        transaction_datetime: 2023-10-11T00:00:00.000
+                        award_date: 2023-10-21
+                        itinerary:
+                          id: "72564500000000"
+                          package_indicator: Standalone
+                          booking_item:
+                            id: "1329922272"
+                            product_line: Lodging
+                            begin_use_date: 2023-10-17
+                            end_use_date: 2023-10-20
+                            booking_date: 2023-10-01
+                        loyalty:
+                          program_name: Alaska
+                          member:
+                            id: "456178230"
+                            tier: Standard
+                            last_name: Doe
+                          points:
+                            point_definition: 2X_09032020_Alaska
+                            pending:
+                              total: 1.10
+                              base: 1.10
+                              bonus: 0.0
+                            awarded:
+                              total: 0.0
+                              base: 0.0
+                              bonus: 0.0
+                        pricing:
+                          - gross_booking_value: 0.0
+                            base_price: 0.0
+                            currency: USD
+                      - transaction_id: d78fd53a7ed573b9c9731c569fae096f7a508e7ae586aaa29be96b11e94abb36
+                        transaction_type: AWARD
+                        transaction_date: 2023-10-21
+                        transaction_datetime: 2023-10-21T00:00:00.000
+                        award_date: 2023-10-21
+                        itinerary:
+                          id: "72564500000000"
+                          package_indicator: Standalone
+                          booking_item:
+                            id: "1329922272"
+                            product_line: Lodging
+                            begin_use_date: 2023-10-17
+                            end_use_date: 2023-10-20
+                            booking_date: 2023-10-01
+                        loyalty:
+                          program_name: Alaska
+                          tier: Standard
+                          member:
+                            id: "456178230"
+                            tier: tierName
+                            last_name: Doe
+                          points:
+                            point_definition: 2X_09032020_Alaska
+                            pending:
+                              total: -101.11
+                              base: -90.01
+                              bonus: -10.10
+                            awarded:
+                              total: 101.11
+                              base: 90.01
+                              bonus: 10.10
+                        pricing:
+                          - gross_booking_value: 231.19
+                            base_price: 190.12
+                            currency: USD
+                NoAwardTransaction:
+                  value:
+                    data:
+                      []
+
+
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: BAD_REQUEST
+                message: "Transaction type not supported. Supported transactions types are:\
+                    \ [PURCHASE, MODIFICATION, AWARD, CANCEL]"
+
+        "401":
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Provides an example of the Authorization header.
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: UNAUTHORIZED
+                message: Data required to authenticate your request is missing or
+                  inaccurate
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: FORBIDDEN
+                message: Your request could not be authorized.
+        "500":
+          description: Unknown Internal Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: INTERNAL_ERROR
+                message: An internal server error has occurred.
+      security:
+        - oauth: [ ]
+
+  /loyalty/earn/last_update:
+    get:
+      operationId: loyaltyLastUpdate
+      tags:
+        - Loyalty
+      description: |
+        Get the last update datetime for loyalty earn transactions.
+      responses:
+        "200":
+          description: OK
+          headers:
+            url:
+              schema:
+                type: string
+                description: Url of the call made
+                example: /loyalty/earn/last_update
+
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoyaltyLastUpdateResponse'
+              example:
+                last_update: 2023-10-18T12:23:01.000
+        "401":
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Provides an example of the Authorization header.
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: UNAUTHORIZED
+                message: Data required to authenticate your request is missing or
+                  inaccurate
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: FORBIDDEN
+                message: Your request could not be authorized.
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: NOT FOUND
+                message: There is no data for the given request.
+        "500":
+          description: Unknown Internal Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                code: INTERNAL_ERROR
+                message: An internal server error has occurred.
+
+      security:
+        - oauth: [ ]
+
+components:
+  schemas:
+    LoyaltyResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/LoyaltyTransactionsResponse'
+
+    LoyaltyTransactionsResponse:
+      type: array
+      items:
+        type: object
+        properties:
+          transaction_id:
+            type: string
+            description: Unique Identifier of the transaction
+          transaction_type:
+            type: string
+            description: Transaction Type
+          transaction_date:
+            type: string
+            format: date
+            description: Date booking was last updated in ISO 8601 format (YYYY-MM-DD)
+          transaction_datetime:
+            type: string
+            format: date-time
+            description: Datetime booking was last updated in ISO 8601 format (YYYY-MM-DDThhmmss.sss)
+          award_date:
+            type: string
+            format: date
+            description: Date at which points will be earned/rewarded in ISO 8601 format (YYYY-MM-DD)
+          itinerary:
+            $ref: '#/components/schemas/Itinerary'
+          loyalty:
+            $ref: '#/components/schemas/Loyalty'
+          pricing:
+            type: array
+            items:
+              $ref: '#/components/schemas/Pricing'
+
+    Itinerary:
+      type: object
+      properties:
+        id:
+          type: string
+          format: number
+          description: Itinerary Number
+        booking_date:
+          type: string
+          format: date
+          description: Date when the booking was made
+        package_indicator:
+          type: string
+          description: Whether or not the booking is a package
+        booking_item:
+          $ref: '#/components/schemas/BookingItem'
+
+    BookingItem:
+      type: object
+      properties:
+        id:
+          type: string
+          format: number
+          description: Booking item id
+        product_line:
+          type: string
+          description: Line of business of the item
+        begin_use_date:
+          type: string
+          format: date
+          description: Check in or start of the booking date
+        end_use_date:
+          type: string
+          format: date
+          description: Check out or end of the booking date
+
+    Loyalty:
+      type: object
+      properties:
+        program_name:
+          type: string
+          description: Name of Loyalty Program
+        member:
+          $ref: '#/components/schemas/Member'
+        points:
+          $ref: '#/components/schemas/Points'
+
+    Member:
+      type: object
+      properties:
+        id:
+          type: string
+          format: number
+          description: Membership id
+        tier:
+          type: string
+          description: Name of Loyalty Program
+        last_name:
+          type: string
+          description: Last name
+
+    Points:
+      type: object
+      properties:
+        point_definition:
+          type: string
+          description: Definition of the points applied as related to the Campaign(s) or Base Points
+        pending:
+          $ref: '#/components/schemas/PointDefinition'
+        awarded:
+          $ref: '#/components/schemas/PointDefinition'
+
+    PointDefinition:
+      type: object
+      properties:
+        total:
+          type: number
+          description: Total number of points ( base points + bonus points)
+        base:
+          type: number
+          description: Points where point code / definition refers to base points
+        bonus:
+          type: number
+          description: Points where point code / definition refers to bonus points
+
+    Pricing:
+      type: object
+      properties:
+        currency_code:
+          type: string
+          description: Currency Code
+        gross_booking_value:
+          type: number
+          description: Gross Booking Value of booking
+        base_price:
+          type: number
+          description: Base Price (what points are based off of)
+
+    Error:
+      description: The object used the describe an error, containing both human-readable and in a machine-readable information.
+      type: object
+      properties:
+        code:
+          description: Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon.
+          type: string
+          example: "FORBIDDEN"
+          enum:
+            - UNAUTHORIZED
+            - FORBIDDEN
+            - NOT_FOUND
+            - TOO_MANY_REQUESTS
+            - INTERNAL_SERVER_ERROR
+            - BAD_GATEWAY
+            - SERVICE_UNAVAILABLE
+            - GATEWAY_TIMEOUT
+            - CONFLICT
+            - BAD_REQUEST
+        message:
+          description: A human-readable explanation of the error, specific to this error occurrence.
+          type: string
+          example: "Your request could not be authorized."
+      required:
+        - code
+        - message
+
+    LoyaltyLastUpdateResponse:
+      type: object
+      properties:
+        last_update:
+          type: string
+          format: date-time
+
+  parameters:
+
+    ItineraryId:
+      name: itinerary_id
+      in: query
+      description: Itinerary Number
+      schema:
+        type: string
+      example: "72564500000000"
+
+    MembershipId:
+      name: membership_id
+      in: query
+      description: Loyalty / Membership ID Number
+      schema:
+        type: string
+      example: "456178230"
+
+    TransactionType:
+      name: transaction_type
+      in: query
+      description: "Transaction Type. Possible values: Purchase, Modification, Cancel, Award"
+      schema:
+        type: string
+        enum:
+          - PURCHASE
+          - AWARD
+          - MODIFICATION
+          - CANCEL
+
+    TransactionDateStart:
+      name: transaction_date_start
+      in: query
+      description: Start date of the date range to filter transactions, ISO. 8601 format (YYYY-MM-DD)
+      schema:
+        type: string
+        format: date
+      example: 2023-09-17
+      required: true
+
+    TransactionDateEnd:
+      name: transaction_date_end
+      in: query
+      description: End date of the date range to filter transactions, ISO. 8601 format (YYYY-MM-DD)
+      schema:
+        type: string
+        format: date
+      example: 2023-09-18
+      required: true
+
+    PageSize:
+      name: page_size
+      in: query
+      description: Number of records per page
+      schema:
+        type: integer
+        default: 500
+        oneOf:
+          - minimum: 1
+            maximum: 1000
+            exclusiveMinimum: true
+            exclusiveMaximum: true
+      example: 500
+
+    From:
+      name: from
+      in: query
+      description: Number of records to query from
+      schema:
+        type: integer
+        default: 0
+      example: 1000
+
+  securitySchemes:
+    oauth:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://test.analytics.ean.com/template/v1/oauth/token
+          scopes:
+            demand-solutions.demand-api-wrappers-prod.all: "Access to all Demand API Wrappers"
