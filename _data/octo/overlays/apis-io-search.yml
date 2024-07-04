@@ -1,4 +1,3 @@
----
 name: Open Connectivity for Tours, Activities, and Attractions (OCTO)
 description: >-
   OCTO (Open Connectivity for Tours, Activities, and Attractions) is an open standard API specification for the in-destination experiences sector of the travel industry. The standard defines agreed-upon schemas, endpoints, and capabilities commonly needed when connecting platforms, resellers, OTAs, and other technologies in tours, activities, and attractions. OCTO is open source. Available to anyone who wants to use it. You do not need to be a member to use this specification in your business.
@@ -48,4 +47,3 @@ overlays:
   - type: APIs.io Search
     url: overlays/apis-io-search.yml
 aid: amadeus
----
