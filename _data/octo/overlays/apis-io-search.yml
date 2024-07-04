@@ -61,4 +61,7 @@ maintainers:
 overlays:
   - type: APIs.io Search
     url: overlays/apis-io-search.yml
+  - type: API Evangelist Ratings
+    url: /overlays/api-evangelist-ratings.yml
 aid: amadeus
+score: 40
