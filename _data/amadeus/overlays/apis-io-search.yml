@@ -7,8 +7,8 @@ description: >-
   apps and deliver them to the market quickly.
 url: https://raw.githubusercontent.com/apis-json/artisanal/main/apis/amadeus.yml
 created: 2024/04/14
-modified: 2024/04/14
-specificationVersion: '0.16'
+modified: '2024-07-04'
+specificationVersion: '0.18'
 tags: []
 apis:
   - aid: amadeus:airline-routes
