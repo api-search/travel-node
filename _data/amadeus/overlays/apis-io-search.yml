@@ -1,375 +1,146 @@
-name: Amadeus
+name: Weatherbit
 description: >-
-  Leverage the full potential of travel data with Amadeus Travel APIs. Get
-  instant access to over 400 airlines, 150,000 hotels, 300,000 tours &
-  activities, and more. Whether you are a developer, a startup or a leading
-  travel brand, Amadeus APIs enable you to play, innovate, create high-quality
-  apps and deliver them to the market quickly.
-url: https://raw.githubusercontent.com/apis-json/artisanal/main/apis/amadeus.yml
-created: 2024/04/14
+  Our mission at Weatherbit.io is pretty simple. It is to provide the highest
+  quality weather forecasts, observations, and historical weather data
+  possibl-e.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/apis-json/artisanal/main/apis/weatherbit.yml
+created: 2023/11/20
 modified: '2024-07-04'
 specificationVersion: '0.18'
-tags: []
+tags:
+  - Weather
 apis:
-  - aid: amadeus:airline-routes
-    name: Airline Routes
-    description: Needs a description
+  - name: Weatherbit Current Weather API
+    description: >-
+      This API returns current conditions from our network of sub-hourly
+      reporting weather stations, as well as relevant atmospheric meso-analyses
+      (For example, the RTMA). Every API request will return the nearest, and
+      most recent observation.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.weatherbit.io/api/weather-current
+    baseURL: http://api.weatherbit.io
     tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/airline-routes-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/airline-routes-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:airport-city-search
-    name: Airport & City Search
-    description: Needs a description
+    properties:
+      - type: Documentation
+        url: https://www.weatherbit.io/api/weather-current
+      - type: OpenAPI
+        url: properties/weatherbit-current-weather-openapi-original.yml
+    overlays: []
+    aid: weatherbit:weatherbit-current-weather-api
+  - name: Weatherbit Severe Weather Alerts API
+    description: >+
+      This API returns severe weather alerts issued by local meteorological
+      agencies. Current supported countries include: The USA via NOAA. European
+      Union member nations, the United Kingdom, and Israel via Meteoalarm. As
+      well as weather alerts for Canada via Environment Canada, and China via
+      the China Meteorological Administration.
+
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.weatherbit.io/api/alerts
+    baseURL: https://api.weatherbit.io
     tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/airport-city-search-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/airport-city-search-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:airport-nearest-relevant
-    name: Airport Nearest Relevant
-    description: Needs a description
+    properties:
+      - type: Documentation
+        url: https://www.weatherbit.io/api/alerts
+    overlays: []
+    aid: weatherbit:weatherbit-severe-weather-alerts-api
+  - name: Weatherbit Weather Forecast API
+    description: >-
+      Improve your business applications with accurate forecasts derived from
+      the world's best high resolution global, and regional weather models.
+      These forecasts incorporate corrections for model biases using state of
+      the art machine learning methods. Our temperature forecasts consistently
+      outperform those of all competitors, including the US National Weather
+      Service! View our live forecast verification page to see how our API has
+      performed against the competition over the past 30 days.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.weatherbit.io/api/weather-forecast-api
+    baseURL: https://api.example.com
     tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/airport-nearest-relevant-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/airport-nearest-relevant-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:airport-on-time-performance
-    name: Airport On-Time Performance
-    description: Needs a description
+    properties:
+      - type: Documentation
+        url: https://www.weatherbit.io/api/weather-forecast-api
+    overlays: []
+    aid: weatherbit:weatherbit-weather-forecast-api
+  - name: Weatherbit Historical Weather API
+    description: >-
+      The Historical Weather API allows you to quickly retrieve accurate, high
+      resolution historical weather data for any location in the world. Our
+      curated weather data is backed by over 120,000 weather stations as well as
+      high resolution gridded weather datasets such as the ERA-5 re-analysis,
+      and global satellite / doppler radar. Data retrieved from our API is
+      gap-free (minimal missing data) due to its application of advanced machine
+      learning, and statistical backfilling techniques.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.weatherbit.io/api/historical-weather-api
+    baseURL: https://api.weatherbit.io
     tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/airport-on-time-performance-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: >-
-          overlays/airport-on-time-performance-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:airport-routes
-    name: Airport Routes
-    description: Needs a description
+    properties:
+      - type: Documentation
+        url: https://www.weatherbit.io/api/historical-weather-api
+    overlays: []
+    aid: weatherbit:weatherbit-historical-weather-api
+  - name: Weatherbit Ag-Weather API
+    description: >-
+      Use our service to retrieve derived data specific to the agriculture
+      industry. This API utilizes the state of the art GLDAS re-analysis to
+      provide global coverage at a spatial resolution of 0.25 degrees.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.weatherbit.io/api/agweather-api
+    baseURL: https://api.example.com
     tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/airport-routes-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/airport-routes-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:amadeus-oauth2-login
-    name: Amadeus OAuth2 Login
-    description: Needs a description
+    properties:
+      - type: Documentation
+        url: https://www.weatherbit.io/api/agweather-api
+    overlays: []
+    aid: weatherbit:weatherbit-ag-weather-api
+  - name: Weatherbit Air Quality API
+    description: >
+      Enrich your business applications with high quality air quality data
+      derived from the world's most advanced global, and regional air quality
+      models. As well as thousands of air quality monitoring stations around the
+      world.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.weatherbit.io/api/air-quality-api
+    baseURL: https://api.example.com
     tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/amadeus-oauth2-login-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/amadeus-oauth2-login-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:branded-fares-upsell
-    name: Branded Fares Upsell
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/branded-fares-upsell-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/branded-fares-upsell-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:city-search
-    name: City Search
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/city-search-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/city-search-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:flight-availibilities-search
-    name: Flight Availibilities Search
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/flight-availibilities-search-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: >-
-          overlays/flight-availibilities-search-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:flight-busiest-traveling-period
-    name: Flight Busiest Traveling Period
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/flight-busiest-traveling-period-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: >-
-          overlays/flight-busiest-traveling-period-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:flight-cheapest-date-search
-    name: Flight Cheapest Date Search
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/flight-cheapest-date-search-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: >-
-          overlays/flight-cheapest-date-search-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:flight-check-in-links
-    name: Flight Check-in Links
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/flight-check-in-links-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/flight-check-in-links-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:flight-choice-prediction
-    name: Flight Choice Prediction
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/flight-choice-prediction-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/flight-choice-prediction-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:flight-create-orders
-    name: Flight Create Orders
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/flight-create-orders-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/flight-create-orders-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:flight-delay-prediction
-    name: Flight Delay Prediction
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/flight-delay-prediction-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/flight-delay-prediction-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:flight-inspiration-search
-    name: Flight Inspiration Search
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/flight-inspiration-search-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/flight-inspiration-search-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:flight-most-booked-destinations
-    name: Flight Most Booked Destinations
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/flight-most-booked-destinations-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: >-
-          overlays/flight-most-booked-destinations-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:flight-most-traveled-destinations
-    name: Flight Most Traveled Destinations
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/flight-most-traveled-destinations-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: >-
-          overlays/flight-most-traveled-destinations-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:flight-offers-price
-    name: Flight Offers Price
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/flight-offers-price-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/flight-offers-price-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:flight-offers-search
-    name: Flight Offers Search
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/flight-offers-search-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/flight-offers-search-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:flight-order-management
-    name: Flight Order Management
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/flight-order-management-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/flight-order-management-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:flight-price-analysis
-    name: Flight Price Analysis
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/flight-price-analysis-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/flight-price-analysis-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:hotel-booking
-    name: Hotel Booking
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/hotel-booking-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/hotel-booking-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:hotel-list
-    name: Hotel List
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/hotel-list-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/hotel-list-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:hotel-name-autocomplete
-    name: Hotel Name Autocomplete
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/hotel-name-autocomplete-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/hotel-name-autocomplete-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:hotel-ratings
-    name: Hotel Ratings
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/hotel-ratings-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/hotel-ratings-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:hotel-search
-    name: Hotel Search
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/hotel-search-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/hotel-search-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:location-score
-    name: Location Score
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/location-score-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/location-score-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:on-demand-flight-status
-    name: On-Demand Flight Status
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/on-demand-flight-status-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/on-demand-flight-status-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:points-of-interest
-    name: Points of Interest
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/points-of-interest-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/points-of-interest-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:safe-place
-    name: Safe Place
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/safe-place-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/safe-place-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:seatmap-display
-    name: Seatmap Display
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/seatmap-display-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/seatmap-display-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:tours-and-activities
-    name: Tours and Activities
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/tours-and-activities-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/tours-and-activities-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:transfer-booking
-    name: Transfer Booking
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/transfer-booking-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/transfer-booking-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:transfer-management
-    name: Transfer Management
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/transfer-management-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/transfer-management-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:transfer-search
-    name: Transfer Search
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/transfer-search-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/transfer-search-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:travel-recommendations
-    name: Travel Recommendations
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/travel-recommendations-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/travel-recommendations-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:trip-parser
-    name: Trip Parser
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/trip-parser-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/trip-parser-openapi-api-evangelist-ratings.yml
-  - aid: amadeus:trip-purpose-prediction
-    name: Trip Purpose Prediction
-    description: Needs a description
-    tags: []
-    overlays:
-      - type: APIs.io Search
-        url: overlays/trip-purpose-prediction-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/trip-purpose-prediction-openapi-api-evangelist-ratings.yml
+    properties:
+      - type: Documentation
+        url: https://www.weatherbit.io/api/air-quality-api
+    overlays: []
+    aid: weatherbit:weatherbit-air-quality-api
+common:
+  - type: Plans
+    url: https://www.weatherbit.io/pricing
+  - type: Features
+    url: https://www.weatherbit.io/features
+  - type: FAQs
+    url: https://help.weatherbit.io/faq/
+  - type: Status
+    url: https://status.weatherbit.io/
+  - type: Blog
+    url: https://blog.weatherbit.io/
+  - type: Knowledge
+    url: https://help.weatherbit.io/
+  - type: Sign Up
+    url: https://www.weatherbit.io/account/create
+  - type: Login
+    url: https://www.weatherbit.io/account/login
+  - type: Terms of Service
+    url: https://www.weatherbit.io/terms
+  - type: Privacy Policy
+    url: https://www.weatherbit.io/privacy
+  - type: Contact
+    url: https://www.weatherbit.io/contact
 maintainers:
   - FN: API Evangelist
     url: http://apievangelist.com
     email: info@apievangelist.com
-aid: amadeus
+overlays:
+  - type: APIs.io Search
+    url: overlays/apis-io-search.yml
+  - type: API Evangelist Ratings
+    url: overlays/apis-io-search.yml
+aid: weatherbit
+score: 75
