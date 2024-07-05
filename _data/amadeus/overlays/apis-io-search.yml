@@ -11,7 +11,8 @@ url: https://raw.githubusercontent.com/api-search/travel/main/_data/amadeus/over
 created: 2023/11/13
 modified: 2023/11/13
 specificationVersion: '0.16'
-tags: []
+tags:
+  - Travel
 apis:
   - aid: amadeus:airline-routes
     name: Airline Routes
