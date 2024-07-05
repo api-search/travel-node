@@ -7,7 +7,7 @@ description: >-
   travel brand, Amadeus APIs enable you to play, innovate, create high-quality
   apps and deliver them to the market quickly.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-url: https://raw.githubusercontent.com/apis-json/artisanal/main/apis/amadeus.yml
+url: https://raw.githubusercontent.com/api-search/travel/main/_apis/amadeus/apis.md
 created: 2023/11/13
 modified: 2023/11/13
 specificationVersion: '0.16'

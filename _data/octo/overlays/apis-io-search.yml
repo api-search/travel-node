@@ -8,8 +8,7 @@ description: >-
   Available to anyone who wants to use it. You do not need to be a member to use
   this specification in your business.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-url: >-
-  https://raw.githubusercontent.com/api-search/travel/main/apis/expedia-group.yml
+url: https://raw.githubusercontent.com/api-search/travel/main/_data/octo/overlays/apis-io-search.yml
 created: '2024-06-07T00:00:00.000Z'
 modified: '2024-07-04'
 specificationVersion: '0.18'

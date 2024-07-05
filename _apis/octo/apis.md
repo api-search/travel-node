@@ -3,7 +3,7 @@ name: Open Connectivity for Tours, Activities, and Attractions (OCTO)
 description: >-
   OCTO (Open Connectivity for Tours, Activities, and Attractions) is an open standard API specification for the in-destination experiences sector of the travel industry. The standard defines agreed-upon schemas, endpoints, and capabilities commonly needed when connecting platforms, resellers, OTAs, and other technologies in tours, activities, and attractions. OCTO is open source. Available to anyone who wants to use it. You do not need to be a member to use this specification in your business.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-url: https://raw.githubusercontent.com/api-search/travel/main/apis/expedia-group.yml
+url: https://raw.githubusercontent.com/api-search/travel/main/_apis/octo/apis.md
 created: 2024-06-07
 modified:  2024-06-07
 specificationVersion: '0.18'

@@ -3,7 +3,7 @@ name: Expedia Group
 description: >-
   Expedia Group, Inc. is an American travel technology company that owns and operates travel fare aggregators and travel metasearch engines, including Expedia, Hotels.com, Vrbo, Travelocity, Hotwire.com, Orbitz, Ebookers, CheapTickets, CarRentals.com, Expedia Cruises, Wotif, and Trivago.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-url: https://raw.githubusercontent.com/api-search/travel/main/apis/expedia-group.yml
+url: https://raw.githubusercontent.com/api-search/travel/main/_apis/expedia-group/apis.md
 created: 2024-06-07
 modified:  2024-06-07
 specificationVersion: '0.18'
