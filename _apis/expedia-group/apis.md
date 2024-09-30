@@ -1,3 +1,4 @@
+---
 name: Expedia Group
 description: >-
   Expedia Group, Inc. is an American travel technology company that owns and
@@ -93,3 +94,4 @@ overlays:
   - type: APIs.io Search
     url: overlays/apis-io-search.yml
 aid: expedia-group
+---

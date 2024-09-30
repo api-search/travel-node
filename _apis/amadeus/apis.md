@@ -1,3 +1,4 @@
+---
 name: Amadeus
 description: >-
   Leverage the full potential of travel data with Amadeus Travel APIs. Get
@@ -725,3 +726,4 @@ overlays:
   - type: API Evangelist Ratings
     url: overlays/apis-io-search.yml
 aid: amadeus
+---
